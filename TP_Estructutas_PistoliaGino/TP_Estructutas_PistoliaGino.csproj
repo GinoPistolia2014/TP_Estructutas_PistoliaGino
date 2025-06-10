@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -47,29 +47,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ColaPedidos.cs" />
+    <Compile Include="FormPedidosAtendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPedidosAtendidos.Designer.cs">
+      <DependentUpon>FormPedidosAtendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPedidosAtendidos.cs" />
     <Compile Include="FormPedidosPendientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPedidosPendientes.Designer.cs">
       <DependentUpon>FormPedidosPendientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListaPedidosAtendidos.cs" />
-    <Compile Include="FormPedidos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormPedidos.Designer.cs">
-      <DependentUpon>FormPedidos.cs</DependentUpon>
-    </Compile>
     <Compile Include="NodoCola.cs" />
     <Compile Include="NodoLista.cs" />
     <Compile Include="Pedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormPedidos.resx">
-      <DependentUpon>FormPedidos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormPedidosPendientes.resx">
       <DependentUpon>FormPedidosPendientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPedidosAtendidos.resx">
+      <DependentUpon>FormPedidosAtendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

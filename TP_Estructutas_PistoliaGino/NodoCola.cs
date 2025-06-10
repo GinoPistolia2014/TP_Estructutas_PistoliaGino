@@ -9,7 +9,7 @@ namespace TP_Estructutas_PistoliaGino
     public class NodoCola
     {
         public Pedido Pedido { get; set; }
-        public NodoCola Siguiente { get; set; }
+    public NodoCola Siguiente { get; set; }
 
         public NodoCola(Pedido pedido)
         {

@@ -16,7 +16,7 @@ namespace TP_Estructutas_PistoliaGino
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPedidos());
+            Application.Run(new FormPedidosPendientes());
         }
     }
 }

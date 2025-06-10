@@ -3,14 +3,14 @@
     partial class FormPedidosPendientes
     {
         /// <summary>
-        /// Required designer variable.
+        /// Variable del diseñador necesaria.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Limpiar los recursos que se estén usando.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,53 +20,139 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Método necesario para admitir el Diseñador. No se puede modificar
+        /// el contenido de este método con el editor de código.
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvPedidosPendientes = new System.Windows.Forms.DataGridView();
+            this.dgvHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgbPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDetalle = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblDetalle = new System.Windows.Forms.Label();
+            this.btnAtendido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosPendientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnBuscar
+            // btnAgregar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(43, 164);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(114, 97);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Location = new System.Drawing.Point(12, 284);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(166, 73);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvPedidosPendientes
             // 
             this.dgvPedidosPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPedidosPendientes.Location = new System.Drawing.Point(284, 111);
+            this.dgvPedidosPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHora,
+            this.dgvNombre,
+            this.dgbPedido});
+            this.dgvPedidosPendientes.Location = new System.Drawing.Point(368, 12);
             this.dgvPedidosPendientes.Name = "dgvPedidosPendientes";
-            this.dgvPedidosPendientes.Size = new System.Drawing.Size(349, 251);
+            this.dgvPedidosPendientes.Size = new System.Drawing.Size(420, 426);
             this.dgvPedidosPendientes.TabIndex = 1;
+            // 
+            // dgvHora
+            // 
+            this.dgvHora.HeaderText = "Hora";
+            this.dgvHora.Name = "dgvHora";
+            // 
+            // dgvNombre
+            // 
+            this.dgvNombre.HeaderText = "Nombre";
+            this.dgvNombre.Name = "dgvNombre";
+            // 
+            // dgbPedido
+            // 
+            this.dgbPedido.HeaderText = "Pedido";
+            this.dgbPedido.Name = "dgbPedido";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(38, 51);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 3;
+            // 
+            // txtDetalle
+            // 
+            this.txtDetalle.Location = new System.Drawing.Point(38, 121);
+            this.txtDetalle.Name = "txtDetalle";
+            this.txtDetalle.Size = new System.Drawing.Size(100, 20);
+            this.txtDetalle.TabIndex = 4;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(35, 35);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(91, 13);
+            this.lblNombre.TabIndex = 5;
+            this.lblNombre.Text = "Nombre Completo";
+            // 
+            // lblDetalle
+            // 
+            this.lblDetalle.AutoSize = true;
+            this.lblDetalle.Location = new System.Drawing.Point(35, 105);
+            this.lblDetalle.Name = "lblDetalle";
+            this.lblDetalle.Size = new System.Drawing.Size(40, 13);
+            this.lblDetalle.TabIndex = 6;
+            this.lblDetalle.Text = "Pedido";
+            // 
+            // btnAtendido
+            // 
+            this.btnAtendido.Location = new System.Drawing.Point(196, 284);
+            this.btnAtendido.Name = "btnAtendido";
+            this.btnAtendido.Size = new System.Drawing.Size(166, 73);
+            this.btnAtendido.TabIndex = 9;
+            this.btnAtendido.Text = "Atendido";
+            this.btnAtendido.UseVisualStyleBackColor = true;
+            this.btnAtendido.Click += new System.EventHandler(this.btnAtendido_Click);
             // 
             // FormPedidosPendientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAtendido);
+            this.Controls.Add(this.lblDetalle);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtDetalle);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dgvPedidosPendientes);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnAgregar);
             this.Name = "FormPedidosPendientes";
-            this.Text = "FormPedidosAtendidos";
+            this.Text = "Pedidos pendientes";
+            this.Load += new System.EventHandler(this.FormPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosPendientes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvPedidosPendientes;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDetalle;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblDetalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgbPedido;
+        private System.Windows.Forms.Button btnAtendido;
     }
 }
+

@@ -8,6 +8,7 @@ namespace TP_Estructutas_PistoliaGino
 {
     public class ListaPedidosAtendidos
     {
+        FormPedidosAtendidos listaAtendidos = new FormPedidosAtendidos();
         private NodoLista Cabeza;
 
         public ListaPedidosAtendidos()
