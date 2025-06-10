@@ -12,18 +12,52 @@ namespace TP_Estructutas_PistoliaGino
 {
     public partial class FormPedidosPendientes : Form
     {
-        FormPedidosPendientes listapendientes = new FormPedidosPendientes();
+        ColaPedidos pedidos = new ColaPedidos();
+        FormPedidosAtendidos listaAtendidos = new FormPedidosAtendidos();
+
         public FormPedidosPendientes()
         {
             InitializeComponent();
+            Atender();
+            listaAtendidos.Show();
         }
-        public void MostrarPedidos(List<Pedido> listaPedidos)
+
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            pedidos.Insertar(txtNombre.Text, txtDetalle.Text, DateTime.Now);
+            txtNombre.Clear();
+            txtDetalle.Clear();
+            MostrarPedidosPendientes();
+        }
+
+
+        public void Atender()
+        {
+            if (pedidos.Inicio != null)
+            {
+                pedidos.Eliminar();
+
+            }
+            else MessageBox.Show("Pedido atendido");
+        }
+        public void MostrarPedidosPendientes()
         {
             dgvPedidosPendientes.Rows.Clear();
-            foreach (var pedido in listaPedidos)
+            List<Pedido> listPendientes = pedidos.devolverRegistros();
+            foreach (Pedido pedidos in listPendientes)
             {
-                dgvPedidosPendientes.Rows.Add(pedido.NombreCliente + pedido.OrdenPedido);
+                dgvPedidosPendientes.Rows.Add(pedidos.HoraPedido, pedidos.NombreCliente, pedidos.Detalle);
             }
+        }
+
+        private void btnAtendido_Click_1(object sender, EventArgs e)
+        {
+            pedidos.Eliminar();
+            MostrarPedidosPendientes();
         }
     }
 }
