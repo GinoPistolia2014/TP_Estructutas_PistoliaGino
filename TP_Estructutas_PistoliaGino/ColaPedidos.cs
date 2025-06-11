@@ -11,13 +11,13 @@ namespace TP_Estructutas_PistoliaGino
         public NodoCola Inicio;
         public NodoCola Fin;
 
-        public int Count { get; private set; }
+
 
         public ColaPedidos()
         {
             Inicio = null;
             Fin = null;
-            Count = 0;
+           
         }
 
         // Insertar pedido en la cola
@@ -35,7 +35,6 @@ namespace TP_Estructutas_PistoliaGino
                 Fin.Siguiente = nuevo;
                 Fin = nuevo;
             }
-            Count++;
         }
 
         public void Eliminar()
@@ -44,14 +43,14 @@ namespace TP_Estructutas_PistoliaGino
             Inicio = Inicio.Siguiente;
             aux = null;
         }
-        public List<string> devolverRegistros()
+        public List<Pedido> devolverRegistros()
         {
-            List<string> lista = new List<string>();
+            List<Pedido> lista = new List<Pedido>();
 
             NodoCola aux = Inicio;
             while (aux != null)
             {
-                lista.Add(aux.Pedido.NombreCliente + "," + aux.Pedido.Detalle);
+                lista.Add(aux.Pedido);
                 aux = aux.Siguiente;
             }
             return lista;

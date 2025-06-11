@@ -32,8 +32,8 @@ namespace TP_Estructutas_PistoliaGino
             pedidos.Insertar(txtNombre.Text, txtDetalle.Text, DateTime.Now);
             txtNombre.Clear();
             txtDetalle.Clear();
-            Atender();
-            MostrarPedidosPendientes(Pedido);
+           /// Atender();//
+            MostrarPedidosPendientes();
         }
         public void Atender()
         {
@@ -44,19 +44,20 @@ namespace TP_Estructutas_PistoliaGino
             }
             else MessageBox.Show("Pedido atendido");
         }
-        public void MostrarPedidosPendientes(ColaPedidos listaPendientes, ColaPedidos Encargo)
+        public void MostrarPedidosPendientes()
         {
             dgvPedidosPendientes.Rows.Clear();
-            List<String> listPendientes = Encargo.devolverRegistros();
-            foreach (var pedidos in listPendientes)
+            List<Pedido> listPendientes = pedidos.devolverRegistros();
+            foreach (Pedido pedidos in listPendientes)
             {
-                dgvPedidosPendientes.Rows.Add(pedidos.NombreCliente + pedidos.Detalle);
+                dgvPedidosPendientes.Rows.Add(pedidos.HoraPedido, pedidos.NombreCliente, pedidos.Detalle);
             }
         }
 
         private void btnAtendido_Click(object sender, EventArgs e)
         {
-
+            pedidos.Eliminar();
+            MostrarPedidosPendientes();
         }
     }
 }
